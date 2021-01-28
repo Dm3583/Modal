@@ -1,0 +1,54 @@
+.box{
+    height: 200px;
+    width:200px;
+    background-color: green;
+}
+
+.position{
+    position:fixed;
+    bottom:0;
+    right:0;
+}
+
+.box2{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+}
+
+.position2{
+    position:fixed;
+    bottom: 200px;
+    right: 200px
+
+}
+
+.box3{
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+}
+
+.position3{
+    position:static;
+}
+
+.box4{
+    height: 90%;
+    width: 90%;
+    background-color: red;
+}
+
+.position4{
+    position: static;
+}
+
+.box5{
+    height: 90%;
+    width: 90%;
+    background-color: rgb(100, 15, 15);
+}
+
+.position5{
+    position: static;
+}
