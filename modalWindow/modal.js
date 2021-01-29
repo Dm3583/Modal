@@ -1,42 +1,56 @@
 const div1 = {
     tag: 'div',
     class: ['box', 'position'],
-    attr: [['data-test', 'test']],
+    attr: [
+        ['data-test', 'test']
+    ],
 };
 
 const div2 = {
     tag: 'div',
     class: ['box2', 'position2'],
-    attr: [['data-test-two', 'test2']],
+    attr: [
+        ['data-test-two', 'test2']
+    ],
 };
 
 const div3 = {
     tag: 'div',
     class: ['box3', 'position3'],
-    attr: [['data-test-two', 'test3'], ['id', 'root-blue']],
+    attr: [
+        ['data-test-two', 'test3'],
+        ['id', 'root-blue']
+    ],
 };
 
 const div4 = {
     tag: 'div',
     class: ['box4', 'position4'],
-    attr: [['data-test-two', 'test4']],
+    attr: [
+        ['data-test-two', 'test4']
+    ],
 };
 
 const div5 = {
     tag: 'div',
     class: ['box5', 'position5'],
-    attr: [['data-test-two', 'test5']],
+    attr: [
+        ['data-test-two', 'test5']
+    ],
 };
 
 const ul = {
     tag: 'ul',
     class: ['list'],
-    attr: [['id', 'list']]
+    attr: [
+        ['id', 'list']
+    ]
 };
 
 const li = {
     tag: 'li',
-    class: ['item']
+    class: ['item'],
+    text: ''
 };
 
 const data = [
@@ -90,6 +104,9 @@ function nestedElements(rootNode, elements) {
         let node = document.createElement(e.tag);
         addClasses(e.class, node)
         setAttributes(e.attr, node)
+        if (e.text) {
+            node.textContent = e.text;
+        }
         root.appendChild(node);
         elements.shift();
         nestedElements(node, elements);
@@ -115,7 +132,7 @@ renderElements(root, false, div1, div2);
 
 renderElements(root, true, div3, div4, div5, ul);
 
-const modal = document.querySelector('#root-blue');
+const _modal = document.querySelector('#root-blue');
 const list = document.querySelector('#list');
 
 data.forEach((e, i) => {
